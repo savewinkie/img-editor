@@ -1,0 +1,26 @@
+<svg width="420" height="115" viewBox="0 0 420 115" xmlns="http://www.w3.org/2000/svg">
+  <!-- Crop mark corners -->
+  <path d="M0,14 L16,14 M0,14 L0,30" fill="none" stroke="#FAF7F2" stroke-width="2" stroke-linecap="square"/>
+  <path d="M92,14 L108,14 M108,14 L108,30" fill="none" stroke="#FAF7F2" stroke-width="2" stroke-linecap="square"/>
+  <path d="M0,78 L16,78 M0,78 L0,94" fill="none" stroke="#FAF7F2" stroke-width="2" stroke-linecap="square"/>
+  <path d="M92,94 L108,94 M108,78 L108,94" fill="none" stroke="#FAF7F2" stroke-width="2" stroke-linecap="square"/>
+
+  <!-- Focus dot -->
+  <circle cx="54" cy="54" r="4" fill="none" stroke="#FAF7F2" stroke-width="1.5"/>
+  <circle cx="54" cy="54" r="1.5" fill="#FAF7F2"/>
+
+  <!-- Divider line -->
+  <line x1="122" y1="20" x2="122" y2="88" stroke="rgba(250,247,242,0.18)" stroke-width="0.75"/>
+
+  <!-- IMAGE text -->
+  <text x="135" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="400" fill="#FAF7F2" letter-spacing="5">IMAGE</text>
+
+  <!-- Horizontal rule between IMAGE and TOOLZ -->
+  <line x1="135" y1="54" x2="340" y2="54" stroke="rgba(250,247,242,0.2)" stroke-width="0.5"/>
+
+  <!-- TOOLZ text -->
+  <text x="135" y="83" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="500" fill="#FAF7F2" letter-spacing="5">TOOLZ</text>
+
+  <!-- Tagline -->
+  <text x="137" y="108" font-family="sans-serif" font-size="10" fill="rgba(250,247,242,0.28)" letter-spacing="2.5">Browser-based image tools</text>
+</svg>
