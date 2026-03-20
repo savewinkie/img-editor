@@ -184,13 +184,27 @@ export default function Home() {
     return canvas;
   };
 
-  const saveToHistory = async (filename: string, file: File) => {
-    if (!user) return;
-    const filePath = `${user.id}/${Date.now()}_${filename}`;
-    const { data: uploadData } = await supabase.storage.from("images").upload(filePath, file, { upsert: true });
-    const imageUrl = uploadData?.path ? supabase.storage.from("images").getPublicUrl(uploadData.path).data.publicUrl : null;
-    await supabase.from("history").insert({ user_id: user.id, filename, width: parseInt(width), height: parseInt(height), format, crop_mode: cropMode, image_url: imageUrl });
-  };
+const saveToHistory = async (filename: string, file: File) => {
+  if (!user) return;
+  const filePath = `${user.id}/${Date.now()}_${filename}`;
+  const { data: uploadData, error } = await supabase.storage.from("images").upload(filePath, file, { upsert: true });
+  
+  let imageUrl = null;
+  if (uploadData?.path) {
+    const { data: urlData } = supabase.storage.from("images").getPublicUrl(filePath);
+    imageUrl = urlData?.publicUrl || null;
+  }
+  
+  await supabase.from("history").insert({ 
+    user_id: user.id, 
+    filename, 
+    width: parseInt(width), 
+    height: parseInt(height), 
+    format, 
+    crop_mode: cropMode, 
+    image_url: imageUrl 
+  });
+};
 
   const processAndDownload = async () => {
     if (images.length === 0) return;
